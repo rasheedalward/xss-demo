@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Demo</title>
+</head>
+<body>
+  <h2>XSS Test Page</h2>
+  <script>
+    let urlParams = new URLSearchParams(window.location.search);
+    let q = urlParams.get('q');
+    if (q) {
+      document.write(q);
+    }
+  </script>
+</body>
+</html>

